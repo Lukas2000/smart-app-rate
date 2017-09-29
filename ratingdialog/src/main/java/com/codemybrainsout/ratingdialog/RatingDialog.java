@@ -228,7 +228,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         };
     }
 
-    private void openForm() {
+    public void openForm() {
         tvFeedback.setVisibility(View.VISIBLE);
         etFeedback.setVisibility(View.VISIBLE);
         feedbackButtons.setVisibility(View.VISIBLE);
