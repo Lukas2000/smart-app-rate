@@ -39,8 +39,6 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:numStars="5"
-            android:scaleX="0.7"
-            android:scaleY="0.7"
             android:stepSize="1" />
 
         <TextView
