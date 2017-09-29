@@ -1,13 +1,11 @@
 package com.codemybrainsout.ratingdialog;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -24,7 +22,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by ahulr on 24-10-2016.
@@ -213,7 +210,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         builder.ratingThresholdClearedListener = new Builder.RatingThresholdClearedListener() {
             @Override
             public void onThresholdCleared(RatingDialog ratingDialog, float rating, boolean thresholdCleared) {
-                openPlaystore(context);
+             //   openPlaystore(context);
                 dismiss();
             }
         };
@@ -239,12 +236,12 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
     }
 
     private void openPlaystore(Context context) {
-        final Uri marketUri = Uri.parse(builder.playstoreUrl);
+       /* final Uri marketUri = Uri.parse(builder.playstoreUrl);
         try {
             context.startActivity(new Intent(Intent.ACTION_VIEW, marketUri));
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(context, "Couldn't find PlayStore on this device", Toast.LENGTH_SHORT).show();
-        }
+        }*/
     }
 
     public TextView getTitleTextView() {
@@ -362,7 +359,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         public Builder(Context context) {
             this.context = context;
             // Set default PlayStore URL
-            this.playstoreUrl = "market://details?id=" + context.getPackageName();
+         //   this.playstoreUrl = "market://details?id=" + context.getPackageName();
             initText();
         }
 
