@@ -204,7 +204,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         }
 
         if (builder.ratingDialogListener != null) {
-            builder.ratingDialogListener.onRatingSelected(ratingBar.getRating(), thresholdPassed);
+            builder.ratingDialogListener.onRatingSelected(this,ratingBar.getRating(), thresholdPassed);
         }
         showNever();
     }
@@ -356,7 +356,7 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
         }
 
         public interface RatingDialogListener {
-            void onRatingSelected(float rating, boolean thresholdCleared);
+            void onRatingSelected(RatingDialog ratingDialog, float rating, boolean thresholdCleared);
         }
 
         public Builder(Context context) {
