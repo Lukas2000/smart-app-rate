@@ -37,7 +37,7 @@
             android:layout_below="@id/dialog_rating_title"
             android:layout_centerHorizontal="true"
             android:numStars="5"
-            android:stepSize="1" />
+            android:stepSize="0.1" />
 
         <TextView
             android:id="@+id/dialog_rating_feedback_title"
