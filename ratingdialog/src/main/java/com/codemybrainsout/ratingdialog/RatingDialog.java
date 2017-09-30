@@ -181,15 +181,15 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
 
     @Override
     public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+        int rating = Math.round(ratingBar.getRating());
 
-
-        if (ratingBar.getRating() >= threshold) {
+        if (rating >= threshold) {
             thresholdPassed = true;
 
             if (builder.ratingThresholdClearedListener == null) {
                 setRatingThresholdClearedListener();
             }
-            builder.ratingThresholdClearedListener.onThresholdCleared(this, ratingBar.getRating(), thresholdPassed);
+            builder.ratingThresholdClearedListener.onThresholdCleared(this, rating, thresholdPassed);
 
         } else {
             thresholdPassed = false;
@@ -197,11 +197,11 @@ public class RatingDialog extends AppCompatDialog implements RatingBar.OnRatingB
             if (builder.ratingThresholdFailedListener == null) {
                 setRatingThresholdFailedListener();
             }
-            builder.ratingThresholdFailedListener.onThresholdFailed(this, ratingBar.getRating(), thresholdPassed);
+            builder.ratingThresholdFailedListener.onThresholdFailed(this, rating, thresholdPassed);
         }
 
         if (builder.ratingDialogListener != null) {
-            builder.ratingDialogListener.onRatingSelected(this,ratingBar.getRating(), thresholdPassed);
+            builder.ratingDialogListener.onRatingSelected(this,rating, thresholdPassed);
         }
         showNever();
     }

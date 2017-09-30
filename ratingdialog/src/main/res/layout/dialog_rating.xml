@@ -36,8 +36,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/dialog_rating_title"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:numStars="5"
             android:stepSize="1" />
 
